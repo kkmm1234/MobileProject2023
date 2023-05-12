@@ -1,0 +1,9 @@
+Home Page: This is the main landing page of the app. It contains a button that will take you to a page where you can see a list of recipes, and a button to your favorites page.
+
+Recipes Page: This page shows a list of six random recipes, each with a title, category, and image. Clicking on a recipe will take you to a page with more detailed information about the recipe. There is a "More!" button at the bottom that will load six more random recipes.
+
+Details Page: This page displays more information about a specific recipe. It includes the recipe's title, category, area, image, ingredients, and instructions. You can also add the recipe to your favorites from this page.
+
+Favorites Page: This page displays a list of all the recipes you have marked as favorites. You can remove a recipe from your favorites list by clicking on the "Remove" button next to it.
+
+Browser: This button will open a new browser window to the Google homepage.

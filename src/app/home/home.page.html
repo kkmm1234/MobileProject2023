@@ -1,19 +1,18 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
- <h3>Welcome to Mobile Apps Starter project 2023</h3>
+    <h3>Welcome to Recipe Repository, hit the button below to view recipes!</h3>
+    <div>
+      <ion-button [routerLink]="['/recipes']" routerDirection="forward">Recipes</ion-button>
+    </div>
+    <div>
+      <ion-button [routerLink]="['/favourites']" routerDirection="forward">Favourites</ion-button>
+    </div>
+    <div>
+      <ion-button (click)="openBrowser()">Browser</ion-button>
+    </div>
+    <div>
+      <a>App created by g00404488</a>
+    </div>
   </div>
 </ion-content>

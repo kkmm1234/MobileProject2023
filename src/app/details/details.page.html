@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{ recipe?.strMeal }}
+      <!-- Display the name of the recipe in the toolbar -->
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-img [src]="recipe?.strMealThumb"></ion-img>
+    <!-- Display the image of the recipe using ion-img element -->
+    <h3>Ingredients:</h3>
+    <ul>
+      <li *ngFor="let ingredient of ingredients">{{ ingredient }}</li>
+      <!-- Use ngFor to loop through the ingredients list and display each ingredient -->
+    </ul>
+    <h3>Instructions:</h3>
+    <p>{{ recipe?.strInstructions }}</p>
+    <!-- Display the instructions for the recipe -->
+    <ion-button [routerLink]="['/recipes']" routerDirection="back">Back</ion-button>
+    <!-- Define a button that navigates back to the recipe list -->
+    <ion-button (click)="onAddToFavorites()">Add to Favourites</ion-button>
+    <!-- Define a button that adds the recipe to the list of favourite recipes -->
+  </div>
+</ion-content>

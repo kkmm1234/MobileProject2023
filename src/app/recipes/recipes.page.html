@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Recipes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <div id="MainContainer">
+      <!-- Loop through each recipe and display it in a grid -->
+      <div class="grid-item" *ngFor="let recipe of recipes">
+        <ion-img [src]="recipe.strMealThumb"></ion-img>
+        <h3>{{ recipe.strMeal }}</h3>
+        <!-- Link to the DetailsPage component for more information about the recipe -->
+        <ion-button [routerLink]="['/details', recipe.idMeal]" routerDirection="forward">Details!</ion-button>
+        <h5>{{ recipe.strCategory }}</h5>
+      </div>
+    </div>
+    <ion-footer>
+      <!-- Call the refreshRecipes method to load more recipes -->
+      <ion-button (click)="refreshRecipes()" routerDirection="forward">More!</ion-button>
+      <ion-button [routerLink]="['/favourites']" routerDirection="forward">Favourites</ion-button>
+      <ion-button (click)="openBrowser()">Browser</ion-button>
+    </ion-footer>
+  </div>
+</ion-content>
+

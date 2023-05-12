@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+  <ion-title>
+  Favourites
+  </ion-title>
+  </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+    <div id="container">
+      <!-- This is the main container div, which will hold the favourite recipes -->
+      <div id="MainContainer">
+        <!-- This is an ngFor loop that will iterate over each recipe in the favourites array -->
+        <div class="grid-item" *ngFor="let recipe of favourites">
+          <ion-img [src]="recipe.strMealThumb"></ion-img>
+          <h3>{{ recipe.strMeal }}</h3>
+          <!-- This is a button that links to the DetailsPage and passes the ID of the current recipe in the URL -->
+          <ion-button [routerLink]="['/details', recipe.idMeal]" routerDirection="forward">Details!</ion-button>
+          <!-- This is a button that removes the current recipe from the favourites array -->
+          <ion-button (click)="removeFromFavourites(recipe)">Remove</ion-button>
+          <h5>{{ recipe.strCategory }}</h5>
+        </div>
+      </div>
+      <ion-footer>
+        <ion-button [routerLink]="['/recipes']" routerDirection="forward">Recipes</ion-button>
+      </ion-footer>
+    </div>
+  </ion-content>
+  
+  
+  
+  
